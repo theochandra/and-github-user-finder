@@ -3,6 +3,7 @@ package com.android.data.mapper
 import com.android.data.model.Item
 import com.android.data.response.UsersResponse
 import com.android.domain.model.User
+import com.android.domain.model.UserResult
 import javax.inject.Inject
 
 /**
@@ -10,8 +11,8 @@ import javax.inject.Inject
  */
 class UserMapper @Inject constructor() {
 
-    fun map(response: UsersResponse): List<User> {
-        return response.itemList.map { map(it) }
+    fun map(response: UsersResponse): UserResult {
+        return UserResult(response.totalCount, response.itemList.map { map(it) })
     }
 
     private fun map(item: Item): User {

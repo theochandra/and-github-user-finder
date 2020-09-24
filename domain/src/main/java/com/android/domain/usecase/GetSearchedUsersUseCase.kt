@@ -1,6 +1,7 @@
 package com.android.domain.usecase
 
 import com.android.domain.model.User
+import com.android.domain.model.UserResult
 import com.android.domain.repository.UserRepository
 import com.android.domain.usecase.GetSearchedUsersUseCase.Result.Loading
 import com.android.domain.usecase.GetSearchedUsersUseCase.Result.Success
@@ -12,7 +13,7 @@ class GetSearchedUsersUseCase @Inject constructor(private val userRepository: Us
 
     sealed class Result {
         object Loading : Result()
-        data class Success(val users: List<User>) : Result()
+        data class Success(val userResult: UserResult) : Result()
         data class Failure(val throwable: Throwable) : Result()
     }
 

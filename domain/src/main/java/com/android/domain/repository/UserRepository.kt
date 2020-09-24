@@ -1,6 +1,7 @@
 package com.android.domain.repository
 
 import com.android.domain.model.User
+import com.android.domain.model.UserResult
 import io.reactivex.Single
 
 interface UserRepository {
@@ -9,6 +10,6 @@ interface UserRepository {
         searchKeyword: String,
         page: Int,
         perPage: Int
-    ): Single<List<User>>
+    ): Single<UserResult>
 
 }

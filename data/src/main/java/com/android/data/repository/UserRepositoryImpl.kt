@@ -3,6 +3,7 @@ package com.android.data.repository
 import com.android.data.UserApi
 import com.android.data.mapper.UserMapper
 import com.android.domain.model.User
+import com.android.domain.model.UserResult
 import com.android.domain.repository.UserRepository
 import io.reactivex.Single
 
@@ -15,7 +16,7 @@ class UserRepositoryImpl(
         searchKeyword: String,
         page: Int,
         perPage: Int
-    ): Single<List<User>> {
+    ): Single<UserResult> {
         return userApi.getSearchedUsers(searchKeyword, page, perPage)
             .map { userMapper.map(it) }
     }

@@ -1,6 +1,7 @@
 package com.android.domain.usecase
 
 import com.android.domain.model.User
+import com.android.domain.model.UserResult
 import com.android.domain.repository.UserRepository
 import com.android.domain.rx.RxJavaTestHooksResetRule
 import com.nhaarman.mockito_kotlin.any
@@ -55,13 +56,13 @@ class GetSearchedUsersUseCaseTest {
 
     @Test
     fun `returns the success result when success get data`() {
-        val searchedUsers = arrayListOf<User>()
+        val userResult = UserResult(10, arrayListOf<User>())
 
         given(userRepository.getSearchedUsers(any(), any(), any()))
-            .willReturn(Single.just(searchedUsers))
+            .willReturn(Single.just(userResult))
 
         sut.execute("theo", 1, 10).test()
-            .assertValueAt(1) { (it as Success).users == searchedUsers }
+            .assertValueAt(1) { (it as Success).userResult == userResult }
     }
 
     @Test
