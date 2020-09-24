@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">GithubUserFinder</string>
+
+    <string name="app_name">Github User Finder</string>
+
+    <string name="hint_et_search_keywords">Masukkan nama pengguna yang ingin dicari...</string>
+    <string name="label_tv_user_login">Username</string>
+
+    <string name="label_dialog_title">Opss…</string>
+    <string name="label_error_message">Terjadi kesalahan saat melakukan pencarian…\nCoba beberapa saat lagi.</string>
+    <string name="label_positive_button">OKE</string>
+
 </resources>
