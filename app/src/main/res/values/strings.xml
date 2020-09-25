@@ -7,6 +7,7 @@
 
     <string name="label_dialog_title">Opss…</string>
     <string name="label_error_message">Terjadi kesalahan saat melakukan pencarian…\nCoba beberapa saat lagi.</string>
+    <string name="label_data_not_found">Username yang kamu cari tidak ditemukan…\nCoba pencarian lainnya.</string>
     <string name="label_positive_button">OKE</string>
 
 </resources>

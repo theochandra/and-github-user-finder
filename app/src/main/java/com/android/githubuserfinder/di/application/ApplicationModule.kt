@@ -3,7 +3,6 @@ package com.android.githubuserfinder.di.application
 import com.android.githubuserfinder.BaseApplication
 import com.android.githubuserfinder.BuildConfig
 import com.android.githubuserfinder.Constants
-import com.android.githubuserfinder.interceptor.BasicAuthInterceptor
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
