@@ -34,7 +34,7 @@ class ApplicationModule(private val application: BaseApplication) {
         }
 
         return Retrofit.Builder()
-            .baseUrl(Constants.BASE_URL_APIARY)
+            .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create(Gson()))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(okHttpBuilder.build())
