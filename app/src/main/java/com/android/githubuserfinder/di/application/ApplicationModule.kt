@@ -11,6 +11,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module
@@ -32,6 +33,9 @@ class ApplicationModule(private val application: BaseApplication) {
             httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
             okHttpBuilder.addInterceptor(httpLoggingInterceptor)
         }
+
+        okHttpBuilder.readTimeout(Constants.READ_TIMEOUT, TimeUnit.SECONDS)
+        okHttpBuilder.connectTimeout(Constants.CONNECTION_TIMEOUT, TimeUnit.SECONDS)
 
         return Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
